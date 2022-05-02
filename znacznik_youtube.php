@@ -1,33 +1,32 @@
 <?php
 /*
 Plugin Name: Znacznik YouTube
-Plugin URI:
+Plugin URI: https://github.com/mrpauloen/znacznik-youtube
 Description: Dodawanie filmu z YouTube. Optymalizacja ładowania się strony. Wtyczka dodaje też przycisk do edytora TinyMCE
 Version: 1.0
 Author: Paweł Nowak
-Author URI: http://generatewp.com
+Author URI: https://github.com/mrpauloen
+License: GPLv2 or later
+*/
+
+/*
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 Copyright (C) 2020  Paweł Nowak
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License along
-    with this program; if not, write to the Free Software Foundation, Inc.,
-    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-
-
-
-
-
 */
+
 class CzysteSpalanie_Znacznik_YouTube{
 	/**
 	 * $shortcode_tag
@@ -54,12 +53,12 @@ class CzysteSpalanie_Znacznik_YouTube{
 	}
 
 	function _action__enqueue_js_css(){
-		
+
 		# Lajtboks (lightbox) dla filmów z YouTube
 
 		wp_register_script( 'lity', plugin_dir_url( __FILE__ ) . 'lity/lity.min.js', array( 'jquery' ), '2.4.1', true );
 		wp_register_style( 'lity', plugin_dir_url( __FILE__ ) . 'lity/lity.min.css', null, 0.1, 'all' );
-		
+
 	}
 
 	/**
